@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<body>
+    <h1>회원가입</h1>
+    <!-- h1 태그안에 div속성이 들어가 있으므로 div는 필요없는 코드 -->
+    <table>
+        <tr>
+            <td>이름</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password"></td>
+        </tr>
+        <tr>
+            <td>비밀번호 확인</td>
+            <td><input type="password"></td>
+            <td><input type="button" value="확인"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender"> <span>남자</span>
+                <input type="radio" name="gender"> <span>여자</span>
+            </td>
+        </tr>
+        <tr>
+            <td>생년월일</td>
+            <td>
+                <input style="width: 10px;" type="text"> <span>년</span>
+                <select name="month" >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option selected="selected">12&nbsp;</option>
+                </select> <span>월</span>
+                <input style="width: 10px;" type="text"><span>일</span>
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="가입">
+    <!-- 모든 태그는 div속성(구역 확보)을 가지고 있음 
+    div안에 태그 하나만 들어갈 경우 div는 필요없음-->
+</body>
