@@ -1,5 +1,5 @@
 #SideBar {
-  margin-top: 50px;
+  margin-top: 48px;
   padding-right: 10px;
   background-color: white;
   position: fixed;
@@ -37,8 +37,4 @@
 }
 .TextRed {
   color: red;
-}
-
-body {
-  background-color: rgb(244, 246, 248);
 }

@@ -1,29 +1,70 @@
 body {
-  /* margin: 0px; */
+  background-color: rgb(249, 249, 249);
 }
 
-#MediaTopMargin {
+#VideoTopMargin {
   height: 70px;
 }
-
-#Medias {
-  margin-left: 90px;
-  margin-right: 10px;
-  /* padding-top: 70px; */
+#VideoBody {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-content: stretch;
+}
+.VideoLeftMargin {
+  width: 60px;
+  flex: none;
+}
+.VideoMargin {
+  flex-basis: 200px;
 }
 
-#MediaUnit {
-  width: 250px;
-  height: 200px;
+#Videos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.VideoUnit {
+  min-width: 200px;
+  height: fit-content;
   margin: 10px;
-  background-color: turquoise;
-  display: inline;
+  flex: 20%;
 }
+/* 
+.VideoUnit {
+  min-width: 200px;
+  height: fit-content;
+  margin: 10px;
+  flex-basis: 350px;
+  flex-grow: 0;
+  flex-shrink: 1;
+} */
 
+.VideoThumnail {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+}
+.VideoBottom {
+  display: flex;
+}
+.VideoChannelProfile {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.VideoTopic {
+  margin-bottom: 5px;
+}
+/* .VideoChannelName {
+  color: gainsboro;
+  font-size: 13px;
+} */
+.VideoDetails {
+  color: rgb(153, 153, 153);
+  font-size: 13px;
+  overflow: hidden;
+}
 /* 
 → flex 종류
 
@@ -35,4 +76,4 @@ align-self
 flex-wrap
 flex-flow
 align-content
-*/
+*/ ;
