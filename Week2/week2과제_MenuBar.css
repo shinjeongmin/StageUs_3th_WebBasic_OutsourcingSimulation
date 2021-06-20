@@ -9,21 +9,22 @@
   justify-content: space-between;
   align-items: center;
   height: fit-content;
-  /* height: 55px; */
+  /* height: 50px; */
 
   background-color: white;
   z-index: 2;
 }
 #MenuBar > div {
-  display: inline;
+  display: flex;
 }
 
 #start{
   width: fit-content;
 }
 #center{
+  min-width: 0px;
   flex: 2 2 0;
-  align-content: flex-end;
+  align-items: center;
 }
 #end{
   width: fit-content;
@@ -57,16 +58,20 @@
   }
 }
 #Search {
+  width: 100%;
   height: 30px;
 
   display: flex;
   justify-content: center;
 }
 #SearchInput {
-  width: 50%;
+  min-width: 10px;
+  max-width: 550px;
+  margin-left: 30px;
   border: 1px solid rgb(182, 182, 182);
   border-right: none;
-  margin: 0px;
+
+  flex: 2 2 0;
 }
 #SearchInputKeyBoardBtn{
   width: 30px;
@@ -94,5 +99,5 @@
 }
 
 #MenuRight {
-  display: inline;
+  display: flex;
 }
