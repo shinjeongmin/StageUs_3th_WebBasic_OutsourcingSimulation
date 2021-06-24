@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="../Week2/Image/favicon/favicon_144x144.png" rel="shortcut icon" type="../Week2/Image/x-icon">
+    <!-- 보통 한 페이지의 css는 한 파일로 통일. -->
+    <!-- html DOM의 순서에 따라 css 작성 순서를 결정 -->
+    <!-- 폰트를 준다면 p또는 div 전체에 주는 방식 -->
+    <link rel="stylesheet" href="../Week2/week2과제_SideBar.css">
+    <link rel="stylesheet" href="../Week2/week2과제_MenuBar.css">
+    <!-- 페이지 안에서 오는 순서도 신경 쓸 것. -->
+    <link rel="stylesheet" href="../Week2/week2과제_Body.css">
+    <link rel="stylesheet" href="../Week2/week2과제_media.css">
+    <!-- css를 읽는사람이 볼 때를 고려해서 한 번에 알 수 있도록. -->
+    <!-- css가 많다 싫으면 슬래시(/)로 영역 구분이 가독성이 오히려 좋음 -->
+
+    <link rel="stylesheet" href="week3과제_유튜브.css">
+    <title>YouTube</title>
+</head>
+
+<body>
+    <div id="MenuBar"> 
+        <!-- header / nav / main 등 css에서 일반적으로 부분을 나눌 때 사용하는 
+        id 네이밍 규칙이 있음-->
+        <div id="start">
+        <!-- div의 id를 보고 css를 고려하는 것을 먼저 생각 -->
+            <button id="MenuBarBtn">
+                <img src="../Week2/Image/MenuBar/menubtn.png" alt="">
+            </button>
+            <button id="YouTubeLogoBtn">
+                <img src="../Week2/Image/MenuBar/YoutubeKRLogo.png" alt="">
+            </button>
+        </div>
+
+        <div id="center">
+            <div id="Search">
+                <!-- 변수 이름은 소문자로 시작 -->
+                <input id="SearchInput" type="search" placeholder="검색">
+                <button id="SearchBtn">
+                    <img src="../Week2/Image/MenuBar/searchbtn.png" alt="">
+                </button>
+                <button class="MenuBtn" id="SearchBtnMic">
+                    <img src="../Week2/Image/MenuBar/microphone.png" alt="">
+                </button>
+                <button id="SearchInputKeyBoardBtn">
+                    <img src="../Week2/Image/MenuBar/keyboard.png" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div id="end">
+            <div id="MenuRight">
+                <button class="MenuBtn">
+                    <img src="../Week2/Image/MenuBar/camera.png" alt="">
+                    <!-- 디렉토리명도 소문자로 시작 -->
+                </button>
+                <button class="MenuBtn">
+                    <img src="../Week2/Image/MenuBar/youtubeApp.png" alt="">
+                </button>
+                <button class="MenuBtn">
+                    <img src="../Week2/Image/MenuBar/alarm.png" alt="">
+                </button>
+                <button class="MenuBtn">
+                    <img class="Profile" src="../Week2/Image/MenuBar/profile.jpg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="SideBlankMargin"></div>
+    <div id="SideBar">
+        <button class="SideBtn">
+            <div>
+                <img src="../Week2/Image/SideBarBtn/home.png" alt="">
+                <a class="TextRed">홈</a>
+            </div>
+        </button>
+        <br>
+        <button class="SideBtn">
+            <div>
+                <img src="../Week2/Image/SideBarBtn/search.png" alt="">
+                <a>탐색</a>
+            </div>
+        </button>
+        <br>
+        <button class="SideBtn">
+            <div>
+                <img src="../Week2/Image/SideBarBtn/subscribe.png" alt="">
+                <a>구독</a>
+            </div>
+        </button>
+        <br>
+        <button class="SideBtn">
+            <div>
+                <img src="../Week2/Image/SideBarBtn/storage.png" alt="">
+                <a>보관함</a>
+            </div>
+        </button>
+    </div>
+
+
+    <div id="VideoTopMargin"></div>
+    <div id="VideoBody">
+        <div class="VideoLeftMargin"></div>
+        <div class="VideoMargin"></div>
+        <!-- margin으로 처리가능 -->
+        <div id="Videos">
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <!-- e.g. videoInfo -->
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <img class="VideoThumnail" src="../Week2/Image/thumnail/sorry_guys.webp" alt="">
+                <div class="VideoBottom">
+                    <img class="VideoChannelProfile" src="../Week2/Image/ChannelProfile/itsub.jpg" alt="">
+                    <div>
+                        <div class="VideoTopic">죄송합니다.</div>
+                        <div class="VideoDetails">김치 팔아서 구독자 100명 찍기</div>
+                        <div class="VideoDetails">
+                            조회수 <span>1억</span>회 · <span>1분</span> 전
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <div class="VideoBottom">
+                    <div></div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <div class="VideoBottom">
+                    <div></div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <div class="VideoBottom">
+                    <div></div>
+                </div>
+            </div>
+            <div class="VideoUnit">
+                <div class="VideoBottom">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="VideoMargin"></div>
+    </div>
+    <script>
+
+    </script>
+</body>
