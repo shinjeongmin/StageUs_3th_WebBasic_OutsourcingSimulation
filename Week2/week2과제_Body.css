@@ -30,7 +30,7 @@ body {
   flex: 20%;
 }
 @media (min-width: 1650px) {
-  .VideoUnit{
+  .VideoUnit {
     flex: 18%;
   }
 }

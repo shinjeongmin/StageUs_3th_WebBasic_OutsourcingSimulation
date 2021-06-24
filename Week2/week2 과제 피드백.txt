@@ -1,0 +1,13 @@
+가장 중요한 건 선택자(id, class)이름 통일 및 획일화
+
+이미지에 달리는 클래스나 id도 img를 붙이는 것이 좋음.
+title content등 알아보기 쉬운 키워드를 붙일 것.
+
+부모와 자식에 둘다 적용되는 경우 감싸주는 div에 id로 box를 지음
+
+YouTube 검색창의 키보드 모양 터치 자판모드는 input 태그에 border를 
+없애고(css적용없음) div안에 input과 keyboard버튼을 주었다.
+
+vertical-align도 중간 정렬의 또 한가지 방법
+
+보통 높이의 경우 부모에 fit-content, 자식에다 height를 설정해서 조절
