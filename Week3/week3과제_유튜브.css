@@ -118,13 +118,13 @@
 /* Side Bar */
 
   #sideBar {
+    width: fit-content;
     height: 100%;
     margin-top: 48px;
     padding-right: 10px;
     background-color: white;
     position: fixed;
     left: 0px;
-    width: fit-content;
     z-index: 1;
   }
   
@@ -146,6 +146,23 @@
     font-size: 11px;
   }
 
+  #sideBarOpened{
+    width: fit-content;
+    height: 100%;
+    margin-top: 48px;
+    padding-right: 10px;
+    background-color: white;
+    position: fixed;
+    left: -300px;
+    z-index: 2;
+    transition-duration: .3s;
+    overflow-y: scroll;
+  }
+
+  #openedMenu{
+    width: 225px;
+  }
+
   .menuBtnBox{
     padding: 12px 0px;
     border-bottom: 1px solid rgb(212, 212, 212);
@@ -160,8 +177,28 @@
     background-color: white;
     border: none;
   }
+  .openMenuSideBtn:hover{
+    cursor:pointer;
+    background-color: rgb(236, 236, 236);
+  }
+  .openMenuSideBtn:active{ 
+    /* 왜 안되지 active? */
+    /* background-color: rgb(175, 175, 175); */
+    background-color:rebeccapurple;
+  }
+  .openMenuSideBtn:focus{
+    background-color: rgb(211, 211, 211);
+    outline: 0;
+  }
+
   .openMenuBtnImg{
     margin-right: 20px;
+  }
+  .openMenuBtnImg:hover{
+    background-color: rgb(236, 236, 236);
+  }
+  .openMenuBtnImg:focus{
+    background-color: rgb(211, 211, 211);
   }
 
   .TextRed {
@@ -177,6 +214,7 @@
     margin: 0 30px;
     margin-left: 100px;
     display: flex;
+    transition-duration: .3s;
   }
   
   #videos {
