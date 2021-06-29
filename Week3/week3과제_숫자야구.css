@@ -31,19 +31,18 @@ body {
 .numPad {
   width: 100px;
   max-width: 200px;
-  height: 100%;
   margin: 10px;
-  padding: 4% 0px;
+  padding: 2% 0px;
   flex: 1 1 0;
   font-size: 50px;
 }
 
-#randNumBtn {
-}
-#eraseBtn {
-}
-#playBtn {
+.actionBtn{
+  width: 100px;
+  height: 40px;
+  margin: 0px 1%;
 }
 
 #result {
+  font-size: 30px;
 }

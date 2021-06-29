@@ -148,12 +148,12 @@
 
   #sideBarOpened{
     width: fit-content;
-    height: 100%;
-    margin-top: 48px;
+    height: 90%;
     padding-right: 10px;
     background-color: white;
     position: fixed;
     left: -300px;
+    top: 56px;;
     z-index: 2;
     transition-duration: .3s;
     overflow-y: scroll;
@@ -166,6 +166,16 @@
   .menuBtnBox{
     padding: 12px 0px;
     border-bottom: 1px solid rgb(212, 212, 212);
+  }
+  .menuBtnBoxDetail{
+    margin-left: 26px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+  }
+
+  .bold{
+    font-weight: bold;
   }
 
   .openMenuSideBtn{
@@ -194,11 +204,11 @@
   .openMenuBtnImg{
     margin-right: 20px;
   }
-  .openMenuBtnImg:hover{
-    background-color: rgb(236, 236, 236);
-  }
-  .openMenuBtnImg:focus{
-    background-color: rgb(211, 211, 211);
+
+  .openMenuCh_ProfileImg{
+    width: 30px;
+    margin-right: 20px;
+    border-radius: 50%;
   }
 
   .TextRed {

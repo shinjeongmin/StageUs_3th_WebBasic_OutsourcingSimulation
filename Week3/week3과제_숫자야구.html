@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" href="week3과제.css">
+    <link rel="stylesheet" href="week3과제_숫자야구.css">
     <title>숫자야구</title>
 </head>
+
 <body>
     <div id="title">숫자 야구 게임</div>
     <div id="inputNum">
@@ -20,19 +22,19 @@
         <button class="numPad" onclick="InputNumber(5)">5</button>
         <button class="numPad" onclick="InputNumber(6)">6</button>
     </div>
-    <div class="numPanel">    
+    <div class="numPanel">
         <button class="numPad" onclick="InputNumber(7)">7</button>
         <button class="numPad" onclick="InputNumber(8)">8</button>
         <button class="numPad" onclick="InputNumber(9)">9</button>
     </div>
     <div>
-        <button id="randNumBtn" onclick="CreateRandomNum()">
+        <button id="randNumBtn" class="actionBtn" onclick="CreateRandomNum()">
             난수 생성
         </button>
-        <button id="eraseBtn" onclick="EraseInputValues()">
+        <button id="eraseBtn" class="actionBtn" onclick="EraseInputValues()">
             입력값 지우기
         </button>
-        <button id="playBtn" onclick="GamePlay()">
+        <button id="playBtn" class="actionBtn" onclick="GamePlay()">
             실행
         </button>
     </div>
@@ -42,59 +44,60 @@
     <script>
         var numBoxs = [];
         var inputBoxs = document.getElementsByClassName("inputBox");
-        function InputNumber(num){
-            for(var i = 0; i < inputBoxs.length; i++){
-                if(inputBoxs[i].innerHTML == ""){
+        function InputNumber(num) {
+            for (var i = 0; i < inputBoxs.length; i++) {
+                if (inputBoxs[i].innerHTML == "") {
                     inputBoxs[i].innerHTML = num;
                     break;
                 }
             }
         }
-        
-        function CreateRandomNum(){
-            for(var i = 0; i < 3;){
+
+        function CreateRandomNum() {
+            for (var i = 0; i < 3;) {
                 var randNum = Math.floor(Math.random() * 10);
                 var notDistinct = true;
-                
-                if(randNum == 0)
+
+                if (randNum == 0)
                     continue;
-                for(var j = 0; j < i; j++){
-                    if(numBoxs[j] == randNum){
+                for (var j = 0; j < i; j++) {
+                    if (numBoxs[j] == randNum) {
                         notDistinct = false;
                     }
                 }
-                if(notDistinct){
+                if (notDistinct) {
                     numBoxs[i] = randNum;
                     ++i;
                     console.log(randNum);
                 }
             }
         }
-        
-        function EraseInputValues(){
-            for(var i = 0 ; i < inputBoxs.length; i++){
+
+        function EraseInputValues() {
+            for (var i = 0; i < inputBoxs.length; i++) {
                 inputBoxs[i].innerHTML = "";
             }
         }
-        
-        function GamePlay(){
+
+        function GamePlay() {
             var strike = 0, ball = 0;
-            for(var i = 0; i < numBoxs.length; i++){
-                if(numBoxs[i] == parseInt(inputBoxs[i].innerHTML)){
+            for (var i = 0; i < numBoxs.length; i++) {
+                if (numBoxs[i] == parseInt(inputBoxs[i].innerHTML)) {
                     ++strike;
                     console.log("strike");
                 }
-                else if(numBoxs.includes(parseInt(inputBoxs[i].innerHTML))){
+                else if (numBoxs.includes(parseInt(inputBoxs[i].innerHTML))) {
                     ++ball;
                     console.log("ball");
                 }
             }
             document.getElementById("result").innerHTML = "Strike : " + strike + " Ball : " + ball;
 
-            if(numBoxs.length != 0 && strike == numBoxs.length){
+            if (numBoxs.length != 0 && strike == numBoxs.length) {
                 document.getElementById("result").innerHTML += "<br>" + "Congratulation!";
             }
         }
     </script>
 </body>
+
 </html>
