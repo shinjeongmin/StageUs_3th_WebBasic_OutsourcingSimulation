@@ -8,28 +8,30 @@
         <div id="color2" class="box" draggable="true"></div>
         <div id="color3" class="box" draggable="true"></div>
     </div>
-    <div id="result">
-        
-    </div>
+    <div id="result"></div>
     <script>
         // 브라우저 연산을 실행한 후 함수를 적용할 수 있도록 window.onload 처리
         window.onload = function(){
             var backColor2 = null;
-            var clickColorId;
+            var clickColorTag;
 
             var colorParent = document.getElementById("colorParent");
             colorParent.ondragstart = function(e){
                 // var backColor = color1.style.getPropertyPriority("background-color");
                 // getPropertyPriority : 외부 css 파일이 있어서 연산을 하기 전에 접근하여 값을 가져오므로 
                 // tag 자체 style의 값만에 접근 가능
-                backColor2 = window.getComputedStyle(clickColorId).backgroundColor;
+
+                backColor2 = window.getComputedStyle(clickColorTag).backgroundColor;
             }
         
             var color1 = document.getElementById("color1");
             var color2 = document.getElementById("color2");
             var color3 = document.getElementById("color3");
-            color1.onclick = function(e){
-                clickColorId = e.target.id;
+            color1.onmousedown = getId;
+            color2.onmousedown = getId;
+            color3.onmousedown = getId;
+            function getId(e){
+                clickColorTag = e.target;
             }
             
             var dropBox = document.getElementById("result");
