@@ -1,0 +1,38 @@
+body{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#cardBox{
+    margin-top: 50px;
+    display: flex;
+}
+
+.numCard{
+    width: 100px;
+    height: 120px;
+    border: solid 1px black;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+#placeBox{
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.placeCard{
+    width: 100px;
+    height: 120px;
+    border: solid 1px gray;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
