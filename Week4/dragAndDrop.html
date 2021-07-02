@@ -21,7 +21,7 @@
             colorParent.ondragstart = function (e) {
                 // var backColor = color1.style.getPropertyPriority("background-color");
                 // getPropertyPriority : 외부 css 파일이 있어서 연산을 하기 전에 접근하여 값을 가져오므로 
-                // tag 자체 style의 값만에 접근 가능
+                // tag 자체 style property에서 사용해야만 접근 가능
 
                 backColor2 = window.getComputedStyle(clickColorTag).backgroundColor;
             }
