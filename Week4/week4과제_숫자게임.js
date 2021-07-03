@@ -22,6 +22,8 @@ function gameStartFunc(e){
     e.target.style.color = "darkgray";
     e.target.onclick = null;
 
+    initNumberCards();
+
     [].forEach.call(numCardArr, element => {
         element.draggable = "true";
         element.onmousedown = function(e){ 
@@ -88,6 +90,14 @@ timerFunc = function(){
         + " : "+ timeObj['second'].toString().padStart(2,'0');
 }
 
+function initNumberCards(){
+    var cardNumbers = [1,2,3,4,5,6,7,8,9];
+    shuffle(cardNumbers);
+    [].forEach.call(numCardArr, (element, index) =>{
+        element.innerHTML = cardNumbers[index].toString();
+    });
+}
+
 function gameEnd(e){
     var result = checkGameClear()
     if(result){
@@ -115,4 +125,22 @@ function checkGameClear(){
         }
     }
     return correctAscend;
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]]
+         = [array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
 }
