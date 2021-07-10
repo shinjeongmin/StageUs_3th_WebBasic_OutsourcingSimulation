@@ -1,0 +1,21 @@
+sudo apt-get update // 파일을 받아옴
+sudo apt-get upgrade // 받아온 파일을 설치
+
+자바설치 (제대로 써놓기)
+apt-get install openjdk-8-jdk
+
+자바설치 후 환경설정
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JATA_HOME/lib:$PATH
+export CLASS_PATH=$JAVA_HOME/lib:$CLASS_PATH
+
+톰캣 설치 9.0
+https://mirror.navercorp.com/apache/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.tar.gz
+
+tar압축해제
+tar zxvf apache-tomcat-(버전 등등 그냥 tab 눌러)
+
+리눅스 레드헷이 가장 좋은데 금액이 비쌈, 바로 전 단계를 그대로 복사한 것이 우분투
+
+-r : 디렉토리도 삭제
+-f : 강제삭제

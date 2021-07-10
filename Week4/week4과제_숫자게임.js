@@ -12,9 +12,10 @@ timeObj['tag'] = document.getElementById("timer");
 var timerFunc;
 var asyncTimerFunc;
 
+// 순수함수의 법칙에 어긋남
 
 startBtn.onclick = gameStartFunc;
-function gameStartFunc(e){
+function gameStartFunc(e){ // 함수의 역할별로 세부 함수들로 구분할 것
     // create Timer
     timeObj['minute'] = 0;
     timeObj['second'] = 0;
@@ -80,6 +81,8 @@ function gameStartFunc(e){
     asyncTimerFunc = setInterval(timerFunc,1000);
 }
 
+// 함수 표현식 (최근은 표현식으로만 주로 사용 (호이스팅 문제))
+// setInterval에 timerFunc란에 익명함수만 넣어주는 방식으로 통일 할 것
 timerFunc = function(){
     timeObj['second']++;
     if(timeObj['second'] >= 60){
@@ -90,6 +93,8 @@ timerFunc = function(){
         + " : "+ timeObj['second'].toString().padStart(2,'0');
 }
 
+// 함수 선언식
+// 같은 의미의 다른 방법이 있는 경우 한 가지로 통일 할 것으로 생각
 function initNumberCards(){
     var cardNumbers = [1,2,3,4,5,6,7,8,9];
     shuffle(cardNumbers);

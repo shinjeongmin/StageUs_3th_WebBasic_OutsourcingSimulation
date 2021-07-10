@@ -1,65 +1,65 @@
-body{
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+body {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-#startBtn{
-    height: 100px;
-    background-color: rgb(212, 212, 212);
-    border: rgb(0, 184, 9) 2px solid;
-    border-radius: 50px;
-    font-size: 70px;
-    color: rgb(39, 39, 39);
+#startBtn {
+  height: 100px;
+  background-color: rgb(212, 212, 212);
+  border: rgb(0, 184, 9) 2px solid;
+  border-radius: 50px;
+  font-size: 70px;
+  color: rgb(39, 39, 39);
 }
-#startBtn:focus{
-    background-color: rgb(184, 184, 184);
+#startBtn:active {
+  background-color: rgb(145, 145, 145);
 }
-#startBtn:active{
-    background-color: rgb(145, 145, 145);
-}
-
-#timer{
-    text-align: center;
-    font-size: 70px;
+#startBtn:focus {
+  background-color: rgb(184, 184, 184);
 }
 
-#cardBox{
-    margin-bottom: 50px;
-    display: flex;
+#timer {
+  text-align: center;
+  font-size: 70px;
 }
 
-.card{
-    width: 100px;
-    height: 120px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: bolder;
+#cardBox {
+  margin-bottom: 50px;
+  display: flex;
 }
 
-.numCard{
-    border: solid 1px teal;
-    color: rgb(70, 70, 70);
+.card {
+  width: 100px;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bolder;
 }
 
-#gameEndSign{
-    visibility: hidden;
-    text-align: center;
-    color: red;
-    font-weight: bolder;
-    font-size: 100px;
+.numCard {
+  border: solid 1px teal;
+  color: rgb(70, 70, 70);
 }
 
-#placeBox{
-    margin-top: 50px;
-    display: flex;
+#gameEndSign {
+  visibility: hidden;
+  text-align: center;
+  color: red;
+  font-weight: bolder;
+  font-size: 100px;
 }
 
-.placeCard{
-    border: solid 1px royalblue;
-    color: red
+#placeBox {
+  margin-top: 50px;
+  display: flex;
+}
+
+.placeCard {
+  border: solid 1px royalblue;
+  color: red;
 }
