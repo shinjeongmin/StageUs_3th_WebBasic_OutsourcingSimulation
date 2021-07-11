@@ -1,123 +1,105 @@
 // start game
 var startBtn = document.getElementById("startBtn");
 // number cards
-var numCardArr = [];
 var clickCard;
-numCardArr = document.getElementsByClassName("numCard");
-var placeCard;
-placeCardArr = document.getElementsByClassName("placeCard");
+var numCardArr = document.getElementsByClassName("numCard");
+var placeCardArr= document.getElementsByClassName("placeCard");
 // timer
-var timeObj = {'minute': 0, 'second': 0};
-timeObj['tag'] = document.getElementById("timer");
-var timerFunc;
+var timeObj
 var asyncTimerFunc;
+// gameEndSign
+const wrongColor = window.getComputedStyle(placeCardArr[0]).color;
 
 // 순수함수의 법칙에 어긋남
 
+// create Timer
+var initTimeObj = function(obj){
+    obj = {'minute': 0, 'second': 0};
+    obj['tag'] = document.getElementById("timer");
+    obj['minute'] = 0;
+    obj['second'] = 0;
+    return obj;
+}
+
 startBtn.onclick = gameStartFunc;
 function gameStartFunc(e){ // 함수의 역할별로 세부 함수들로 구분할 것
-    // create Timer
-    timeObj['minute'] = 0;
-    timeObj['second'] = 0;
+    timeObj = initTimeObj(timeObj);
     // game start button
     e.target.style.color = "darkgray";
     e.target.onclick = null;
-
-    initNumberCards();
-
-    [].forEach.call(numCardArr, element => {
-        element.draggable = "true";
-        element.onmousedown = function(e){ 
-            // element == e.target
-            clickCard = e.target;
-        }
-        element.ondragstart = function(e){}
-        element.ondragover = function(e){
-            e.preventDefault();
-        }
-        element.ondragend = function(e){}
-        element.ondrop = function(e){
-            if(e.target.innerHTML == ""){
-                e.target.innerHTML = clickCard.innerHTML;
-                clickCard.innerHTML = "";
-            }
-            else{
-                var swapValue = e.target.innerHTML;
-                e.target.innerHTML = clickCard.innerHTML;
-                clickCard.innerHTML = swapValue;
-                // e.target.innerHTML = "";
-            }
-            gameEnd(e);
-        }
-    });
     
-    [].forEach.call(placeCardArr, element => {
-        element.draggable = "true";
-        element.onmousedown = function(e){
-            clickCard = e.target;
-        }
-        element.ondragstart = function(e){}
-        element.ondragover = function(e){
-            e.preventDefault();
-        }
-        element.ondragend = function(e){}
-        element.ondrop = function(e){
-            if(e.target.innerHTML == ""){
-                e.target.innerHTML = clickCard.innerHTML;
-                clickCard.innerHTML = "";
-            }
-            else{
-                var swapValue = e.target.innerHTML;
-                e.target.innerHTML = clickCard.innerHTML;
-                clickCard.innerHTML = swapValue;
-                // e.target.innerHTML = "";
-            }
+    numCardArr = initNumberCards(numCardArr);
     
-            gameEnd(e);
-        }
-    });
-
+    // card drag & drop
+    numCardArr = setCardEvent(numCardArr, timeObj);
+    placeCardArr = setCardEvent(placeCardArr, timeObj);
+    
     clearInterval(asyncTimerFunc);
-    asyncTimerFunc = setInterval(timerFunc,1000);
-}
-
-// 함수 표현식 (최근은 표현식으로만 주로 사용 (호이스팅 문제))
-// setInterval에 timerFunc란에 익명함수만 넣어주는 방식으로 통일 할 것
-timerFunc = function(){
-    timeObj['second']++;
-    if(timeObj['second'] >= 60){
-        timeObj['minute']++;
-        timeObj['second'] = 0;
+    asyncTimerFunc = setInterval(
+        // 함수 표현식 (최근은 표현식으로만 주로 사용 (호이스팅 문제))
+        function () {
+            timeObj['second']++;
+            if (timeObj['second'] >= 60) {
+                timeObj['minute']++;
+                timeObj['second'] = 0;
+            }
+            timeObj['tag'].innerHTML = timeObj['minute'].toString().padStart(2, "0")
+            + " : " + timeObj['second'].toString().padStart(2, '0');
+        },1000);
     }
-    timeObj['tag'].innerHTML = timeObj['minute'].toString().padStart(2,"0")
-        + " : "+ timeObj['second'].toString().padStart(2,'0');
-}
 
 // 함수 선언식
 // 같은 의미의 다른 방법이 있는 경우 한 가지로 통일 할 것으로 생각
-function initNumberCards(){
+function initNumberCards(array){
     var cardNumbers = [1,2,3,4,5,6,7,8,9];
     shuffle(cardNumbers);
-    [].forEach.call(numCardArr, (element, index) =>{
+    return Array.prototype.map.call(array, (element, index) =>{
         element.innerHTML = cardNumbers[index].toString();
+        return element;
     });
 }
 
-function gameEnd(e){
-    var result = checkGameClear()
+function setCardEvent(array, paramTimeObj){
+    return Array.prototype.map.call(array,(element) => {
+        element.draggable = "true";
+        element.onmousedown = function(e){ 
+            clickCard = e.target;
+        }
+        element.ondragover = function(e){
+            e.preventDefault();
+        }
+        element.ondragend = function(e){}
+        element.ondrop = function(e){
+            if(e.target.innerHTML == ""){
+                e.target.innerHTML = clickCard.innerHTML;
+                clickCard.innerHTML = "";
+            }
+            else{
+                var swapValue = e.target.innerHTML;
+                e.target.innerHTML = clickCard.innerHTML;
+                clickCard.innerHTML = swapValue;
+                // e.target.innerHTML = "";
+            }
+            e = gameEnd(e, paramTimeObj);
+        }
+        return element;
+    });
+}
+
+function gameEnd(event, paramTimeObj){
+    var result = checkGameClear();
     if(result){
-        document.getElementById("gameEndSign").style.visibility = "unset"
+        document.getElementById("gameEndSign").style.visibility = "unset";
         clearInterval(asyncTimerFunc);
-        timeObj['tag'].style.color = "red";
-        e.target.onclick = gameStartFunc;
+        paramTimeObj['tag'].style.color = "red";
+        event.target.onclick = gameStartFunc;
     }
     else{
         document.getElementById("gameEndSign").style.visibility = "hidden";
     }
+    return event;
 }
 
-var correctColort = "green";
-var wrongColor = window.getComputedStyle(placeCardArr[0]).color;
 function checkGameClear(){
     var correctAscend = true;
     for(var i = 0; i < placeCardArr.length; ++i){
@@ -126,7 +108,7 @@ function checkGameClear(){
             correctAscend = false;
         }
         else{
-            placeCardArr[i].style.color = correctColort;
+            placeCardArr[i].style.color = "green";
         }
     }
     return correctAscend;
