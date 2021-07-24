@@ -1,0 +1,110 @@
+#MenuBar {
+  margin-top: -8px;
+  padding: 3px 16px;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  /* height: 50px; */
+
+  background-color: white;
+  z-index: 2;
+}
+/* 접근자를 사용하는 것보다 class사용이 나음 
+html의 id 내지 class를 보고 찾는 상황을 고려할 것. */
+#MenuBar > div {
+  display: flex;
+}
+
+#start {
+  width: fit-content;
+}
+#center {
+  min-width: 0px;
+  flex: 2 2 0;
+  align-items: center;
+}
+#end {
+  width: fit-content;
+}
+
+#MenuBarBtn {
+  border: none;
+  background-color: white;
+}
+
+#YouTubeLogoBtn {
+  border: none;
+  background-color: white;
+  width: fit-content;
+  padding: 10px;
+}
+
+.MenuBtn {
+  width: 50px;
+  border: none;
+  background-color: white;
+}
+.Profile {
+  width: 30px;
+  border-radius: 50%;
+}
+
+/* media query를 작성시, 변경되면서 적용시킬 화면 픽셀 단위
+(e.g. 1200px 미만부터 적용되는 쿼리)에 따라 
+media query 부분을 아예 나누어(밑을 빼서) 작성. 
+간혹 media query에 따라 파일을 나누기도 함*/
+@media screen and (max-width: 650px) {
+  #Search {
+    visibility: hidden;
+  }
+}
+/* css 속성 순서도 개발자 나름이지만 정규화를 시킬 것 */
+#Search {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+}
+#SearchInput {
+  min-width: 10px;
+  max-width: 550px;
+  margin-left: 30px;
+  border: 1px solid rgb(182, 182, 182);
+  border-right: none;
+
+  flex: 2 2 0;
+}
+#SearchInputKeyBoardBtn {
+  width: 30px;
+  position: relative;
+  right: 162px;
+
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+#SearchInputKeyBoardBtn > img {
+  width: 20px;
+}
+#SearchBtn {
+  width: 70px;
+  margin-left: 0px;
+  padding: 0px;
+
+  border: 1px solid rgb(182, 182, 182);
+  background-color: rgb(248, 248, 248);
+}
+#SearchBtn > img {
+  width: 50px;
+}
+
+#MenuRight {
+  display: flex;
+}

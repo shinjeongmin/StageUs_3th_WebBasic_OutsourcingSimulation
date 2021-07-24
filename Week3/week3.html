@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <title>week3</title>
+</head>
+
+<body>
+
+    <!-- id pw name btn -->
+    <input id="id" type="text"><br>
+    <input id="pw" type="password"><br>
+    <input id="name" type="text"><br>
+    <input id="email" type="text"><br>
+    <input id="phoneNum" type="text">
+    <input type="button" value="입력" onclick="create()">
+    <div id="parent"></div>
+
+    <script>
+        function create() {
+            var userId = document.getElementById("id").value;
+            var userPw = document.getElementById("pw").value;
+            var userName = document.getElementById("name").value;
+            var userEmail = document.getElementById("email").value;
+            var userPhoneNum = document.getElementById("phoneNum").value;
+
+            var newDivId = document.createElement("div");
+            var newDivPw = document.createElement("div");
+            var newDivName = document.createElement("div");
+            var newDivEmail = document.createElement("div");
+            var newDivPhoneNum = document.createElement("div");
+            newDivId.innerText = "Id : " + userId;
+            newDivPw.innerText = "Pw : " + userPw;
+            newDivName.innerText = "Name : " + userName;
+            newDivEmail.innerText = "email : " + userEmail;
+            newDivPhoneNum.innerText = "phoneNum : " + userPhoneNum;
+            var divArr = [newDivId, newDivPw, newDivName, newDivEmail, newDivPhoneNum];
+
+            divArr.forEach(element => {
+                document.getElementById("parent").appendChild(element);
+            });
+
+            // document.getElementById("parent").appendChild(newDivId);
+            // document.getElementById("parent").appendChild(newDivPw);
+            // document.getElementById("parent").appendChild(newDivName);
+            // document.getElementById("parent").appendChild(newDivEmail);
+            // document.getElementById("parent").appendChild(newDivPhoneNum);
+        }
+    </script>
+    <!-- 
+        createElement
+        id : 동적 id 부여
+        className : 동적 class 부여
+     -->
+</body>
+
+</html>

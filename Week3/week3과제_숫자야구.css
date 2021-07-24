@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+  margin: auto;
+}
+#title {
+  font-size: 40px;
+  margin: 20px;
+}
+
+#inputNum {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+.inputBox {
+  min-width: 30px;
+  width: 50px;
+  height: 70px;
+  margin: 15px 10px;
+  padding: 0px 10px;
+  font-size: 50px;
+  border-bottom: 3px solid springgreen;
+}
+
+.numPanel {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 0;
+}
+.numPad {
+  width: 100px;
+  max-width: 200px;
+  margin: 10px;
+  padding: 2% 0px;
+  flex: 1 1 0;
+  font-size: 50px;
+}
+
+.actionBtn{
+  width: 100px;
+  height: 40px;
+  margin: 0px 1%;
+}
+
+#result {
+  font-size: 30px;
+}

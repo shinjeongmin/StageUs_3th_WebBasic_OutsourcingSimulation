@@ -1,0 +1,55 @@
+#first {
+  background-color: red;
+  width: fit-content;
+  height: fit-content;
+  /* fit-content 내용물에 맞춤 */
+  margin: 10px;
+  /* 바깥쪽 여백 */
+  padding: 10px;
+  /* 안쪽 여백 - 요소의 전체 너비 및 높이를 증가 */
+  display: inline;
+  /* displaye : block와 inline등 종류 변환 */
+  /* inline의 단점은 사이즈를 바꿀 수 없음 
+  → inline-block으로 사이즈 변경 가능
+  */
+
+  /* fit-content와 padding을 사용하여 위 아래 가운데 정렬 꼼수 */
+}
+#second {
+  width: 200px;
+  /* height: 50px; */
+  background-color: yellow;
+  font-size: 30px;
+  text-align: center;
+  /* 세로 정렬하는 법 과제 */
+  font-weight: 600;
+  display: inline-block;
+}
+/* block와 inline
+div는 블럭 (해당 줄 자리차지)
+inline은 옆에 누가오든 상관없음
+inline : 태그없이 쓰는 텍스트, 이미지태그, button 등 
+ */
+#third {
+  background-color: blue;
+  position: relative;
+  top: 50px;
+  /* position
+
+  default : static 
+  absolute : 다른 요소(html구조)와 관련없이 지정 위치에 세팅 top, left 이용
+  fixed : 스크롤과 관련없이 해당 위치에 고정
+  relative : 본래의 위치에서 변경된 위치로 이동 
+  (버튼에 대한 설명을 주변에 띄울 때 사용)
+  */
+  border: 1px solid #125d98;
+}
+
+.fontColor {
+  color: gray;
+}
+
+#btn {
+  border: 1px solid #125d98;
+  border-radius: 4px;
+}

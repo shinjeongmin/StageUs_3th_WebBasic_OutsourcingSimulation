@@ -1,0 +1,23 @@
+#homeWorkBox{
+    min-width: none;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.homeWorkBtn{
+    max-width: 200px;
+    margin: 0px 10px;
+    padding: 40px 0px;
+    flex: 20%;
+    background-color: rgb(177, 177, 177);
+    border: rgb(151, 151, 151) solid 1px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(207, 75, 52);
+}
+.homeWorkBtn:visited, .homeWorkBtn:link{
+    background-color: rgb(245, 155, 155);
+    text-decoration: none;
+}
