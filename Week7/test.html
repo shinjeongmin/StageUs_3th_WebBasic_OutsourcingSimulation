@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function modifySchedule(_date, _time, _description){
+        //alert(_date + " " + _time + " " + _description);
+        var uri = './ModifySchedule.jsp';
+        var form = document.createElement('form');
+        form.setAttribute('method','post');
+        form.setAttribute('action', );
+        form.acceptCharset ="utf-8";
+
+        var dateField = document.createElement('input');
+        dateField.setAttribute('type', 'date');
+        dateField.setAttribute('name', 'date');
+        dateField.setAttribute('value', _date);
+        form.appendChild(dateField);
+
+        var timeField = document.createElement('input');
+        timeField.setAttribute('type', 'time');
+        timeField.setAttribute('name', 'time');
+        timeField.setAttribute('value', _time);
+        form.appendChild(timeField);
+
+        var descField = document.createElement('input');
+        descField.setAttribute('type', 'text');
+        descField.setAttribute('name', 'description');
+        descField.setAttribute('value', _description);
+        form.appendChild(descField);
+        encodeURIComponent(uri);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
+</html>
