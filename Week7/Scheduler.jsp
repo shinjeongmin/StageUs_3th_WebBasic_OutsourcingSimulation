@@ -138,6 +138,7 @@
         }
         location.href = "Scheduler.jsp?year=" + year + "&month=" + month;
     }
+    
     function pastMonth(){
         var year = parseInt(<%=year%>);
         var month = (parseInt(<%=month%>) - parseInt(1));
@@ -152,6 +153,7 @@
         var form = document.createElement('form');
         form.setAttribute('method','post');
         form.setAttribute('action', './ModifySchedule.jsp');
+        form.style.display = "none";
 
         var indexField = document.createElement('input');
         indexField.setAttribute('type', 'number');
@@ -186,6 +188,7 @@
             var form = document.createElement('form');
             form.setAttribute('method','post');
             form.setAttribute('action', './DeleteSchedule.jsp');
+            form.style.display = "none";
 
             var indexField = document.createElement('input');
             indexField.setAttribute('type', 'number');

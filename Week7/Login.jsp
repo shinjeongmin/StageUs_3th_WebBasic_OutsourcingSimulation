@@ -12,9 +12,18 @@
     ResultSet rs = null;
     request.setCharacterEncoding("utf-8");
 
+    // 로그인 페이지를 처음 들어왔을 때부터 DB를 체크하는 구조가 이상.
+    // html코드만 있도록 하는게 깔끔함.
+    // jsp모듈을 만들어 action으로 return값만 받는 방법(로그인 시도)를 JS에서 성공여부 체크.
+    // 그 이후 동작은 JS로 처리
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
 
+    // 스파게티 코드 JSP쓰지 않고 데이터만 가져와서 JS에서 파싱처리 
+    // DOM 생성은 웬만하면 JS로
+    // JS에서 JSP의 데이터를 불러오고 보내는 과정으로 수정
+    // +a 로그인 모듈 따로 분리
+    // jsp보다 js의 window.onload가 먼저 실행되는가?
     if(id != null && pw != null){
         try{
             Class.forName("com.mysql.jdbc.Driver");
