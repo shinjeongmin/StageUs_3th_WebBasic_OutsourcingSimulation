@@ -1,16 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
-    String id = (String) session.getAttribute("sessionId");
-    String[] curDateArr = session.getAttribute("curDate").toString().split("-");
-
-    if(id == null)
-    {
-        out.println("<script> alert(\"세션이 만료되었습니다 다시 로그인 해주세요\"); </script>");
-        out.println("<script> location.href = \"./Login.jsp\"; </script>");
-    }
-    String year = curDateArr[0];
-    String month = curDateArr[1].replaceFirst("^0+(?!$)", "");
+    String isCreateSuccess = (String)request.getAttribute("isCreateSuccess");
 %>
 
 <!DOCTYPE html>
@@ -19,6 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CreateSchedule.css">
     <title>Document</title>
 </head>
 <body>
@@ -29,7 +21,7 @@
         </div>
         <hr>
         <div id="body">
-            <form action="CreateScheduleConfirm.jsp" method="POST" id="createScheduleForm">
+            <form action="db_CreateSchedule.jsp" method="POST" id="createScheduleForm">
                 <div id="dateAndTime">
                     <input id="date" type="date" placeholder="Date" name="date">
                     <input id="time" type="time" placeholder="Time" name="time">
@@ -37,15 +29,23 @@
                 <input id="description" type="text" placeholder="Description" name="description">
                 <div id="btns">
                     <button type="button" onclick="checkScheduleContent()">Ok</button>
-                    <button type="button" onclick="pageSchedule()">Cancel</button>
+                    <button type="button" onclick="locationPageSchedule()">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
 <script>
-    function pageSchedule(){
-        location.href= "./Scheduler.jsp?year=" + <%=year%> + "&month=" + <%=month%>+ "";
+    window.onload = function(){
+        if(<%=isCreateSuccess%> != null){
+            if("<%=isCreateSuccess%>" == "true"){
+                alert("일정을 생성하였습니다\n메인 일정 페이지로 이동합니다");
+                locationPageSchedule();
+            }
+            else{
+                alert("일정 추가에 실패하였습니다");
+            }
+        }
     }
 
     function checkScheduleContent(){
@@ -63,6 +63,12 @@
         else{
             document.getElementById("createScheduleForm").submit();
         }
+    }
+    
+    function locationPageSchedule(){
+        var today = new Date();
+        location.href= "./Scheduler.jsp?year=" + today.getFullYear() 
+            + "&month=" + parseInt(today.getMonth() + 1) + "";
     }
 </script>
 </html>

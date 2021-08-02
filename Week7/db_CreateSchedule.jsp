@@ -14,27 +14,28 @@
     request.setCharacterEncoding("utf-8");
 
     String id = (String) session.getAttribute("sessionId");
-    int index = Integer.parseInt(request.getParameter("index"));
+    String date = request.getParameter("date");
+    String time = request.getParameter("time");
+    String description = request.getParameter("description");
 
     if(id != null){
         try{
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db","stageus", "1234");
-            String sql = "delete from schedule where id=? and idx=?";
+            String sql = "insert into schedule(id, date, time, description) values(?,?,?,?)";
             pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             pstmt.setString(1, id);
-            pstmt.setInt(2, index);
+            pstmt.setString(2, date);
+            pstmt.setString(3, time);
+            pstmt.setString(4, description);
             rsInt = pstmt.executeUpdate();
             int count = rsInt;
 
             if(count == 0){
-                out.println("<script> alert(\"일정 삭제에 실패하였습니다\"); </script>");
+                request.setAttribute("isCreateSuccess", "false");
             }
             else{
-                String[] curDateArr = session.getAttribute("curDate").toString().split("-");
-                out.println("<script> alert(\"일정을 삭제하였습니다\\n메인 일정 페이지로 이동합니다\"); </script>");
-                out.println("<script> location.href = \"./Scheduler.jsp?year=" + curDateArr[0]
-                    + "&month=" + curDateArr[1].replaceFirst("^0+(?!$)", "") +"\" </script>");
+                request.setAttribute("isCreateSuccess", "true");
             }
         }
         finally{
@@ -57,3 +58,5 @@
         out.println("<script> location.href = \"./Login.jsp\"; </script>");
     }
 %>
+
+<jsp:forward page="./CreateSchedule.jsp"/>

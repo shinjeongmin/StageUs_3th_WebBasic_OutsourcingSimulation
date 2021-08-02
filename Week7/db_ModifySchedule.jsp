@@ -11,9 +11,10 @@
     PreparedStatement pstmt = null;
     ResultSet rs = null;
     int rsInt = 0;
-    request.setCharacterEncoding("utf-8");
+    request.setCharacterEncoding("UTF-8"); // JSP request 한글 인코딩 처리
 
     String id = (String) session.getAttribute("sessionId");
+    int index = Integer.parseInt(request.getParameter("index"));
     String date = request.getParameter("date");
     String time = request.getParameter("time");
     String description = request.getParameter("description");
@@ -22,23 +23,21 @@
         try{
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db","stageus", "1234");
-            String sql = "insert into schedule(id, date, time, description) values(?,?,?,?)";
+            String sql = "update schedule set date=?, time=?, description=? where id=? and idx=?";
             pstmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            pstmt.setString(1, id);
-            pstmt.setString(2, date);
-            pstmt.setString(3, time);
-            pstmt.setString(4, description);
+            pstmt.setString(1, date);
+            pstmt.setString(2, time);
+            pstmt.setString(3, description);
+            pstmt.setString(4, id);
+            pstmt.setInt(5, index);
             rsInt = pstmt.executeUpdate();
             int count = rsInt;
 
             if(count == 0){
-                out.println("<script> alert(\"일정 추가에 실패하였습니다\"); </script>");
+                request.setAttribute("isModifySuccess", "false");
             }
             else{
-                String[] curDateArr = session.getAttribute("curDate").toString().split("-");
-                out.println("<script> alert(\"일정을 생성하였습니다\\n메인 일정 페이지로 이동합니다\"); </script>");
-                out.println("<script> location.href = \"./Scheduler.jsp?year=" + curDateArr[0]
-                    + "&month=" + curDateArr[1].replaceFirst("^0+(?!$)", "") +"\" </script>");
+                request.setAttribute("isModifySuccess", "true");
             }
         }
         finally{
@@ -61,3 +60,5 @@
         out.println("<script> location.href = \"./Login.jsp\"; </script>");
     }
 %>
+
+<jsp:forward page="./ModifySchedule.jsp"/>
