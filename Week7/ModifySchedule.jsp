@@ -16,30 +16,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ModifySchedule.css">
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <div id="main">
         <div id="header">
-            <img src="">
-            <a>Modify Schedule</a>
+            <img id="headerImg" src="./img/schedule/modifyScheduleImg.png">
+            <a id="headerText">Modify Schedule</a>
         </div>
         <hr>
-        <div id="body">
-            <form action="db_ModifySchedule.jsp" method="POST" id="modifyScheduleForm">
-                <div id="dateAndTime">
-                    <input id="index" type="number" name="index" value="<%=index%>"
-                     style="display: none;">
-                    <input id="date" type="date" placeholder="Date" name="date" value="<%=date%>">
-                    <input id="time" type="time" placeholder="Time" name="time" value="<%=time%>">
-                </div>
-                <input id="description" type="text" placeholder="Description" name="description" value="<%=description%>">
-                <div id="btns">
-                    <button type="button" onclick="checkScheduleContent()">Ok</button>
-                    <button type="button" onclick="locationPageSchedule()">Cancel</button>
-                </div>
-            </form>
-        </div>
+        <form id="modifyScheduleForm" action="db_ModifySchedule.jsp" method="POST">
+            <div id="dateAndTime">
+                <input id="index" type="number" name="index" value="<%=index%>"
+                    style="display: none;">
+                <input id="date" type="date" placeholder="Date" name="date" value="<%=date%>">
+                <input id="time" type="time" placeholder="Time" name="time" value="<%=time%>">
+            </div>
+            <textarea id="description" type="text" placeholder="Description" name="description"><%=description%></textarea>
+            <div id="btns">
+                <button class="btn" type="button" onclick="checkScheduleContent()">Ok</button>
+                <button class="btn" type="button" onclick="locationPageSchedule()">Cancel</button>
+            </div>
+        </form>
     </div>
 </body>
 <script>

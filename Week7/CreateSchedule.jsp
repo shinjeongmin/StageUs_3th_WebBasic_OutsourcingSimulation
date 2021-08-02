@@ -14,25 +14,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <div id="main">
         <div id="header">
-            <img src="">
-            <a>Create Schedule</a>
+            <img id="headerImg" src="./img/schedule/createScheduleImg.png">
+            <a id="headerText">Create Schedule</a>
         </div>
         <hr>
-        <div id="body">
-            <form action="db_CreateSchedule.jsp" method="POST" id="createScheduleForm">
-                <div id="dateAndTime">
-                    <input id="date" type="date" placeholder="Date" name="date">
-                    <input id="time" type="time" placeholder="Time" name="time">
-                </div>
-                <input id="description" type="text" placeholder="Description" name="description">
-                <div id="btns">
-                    <button type="button" onclick="checkScheduleContent()">Ok</button>
-                    <button type="button" onclick="locationPageSchedule()">Cancel</button>
-                </div>
-            </form>
-        </div>
+        <form id="createScheduleForm" action="db_CreateSchedule.jsp" method="POST">
+            <div id="dateAndTime">
+                <input id="date" type="date" placeholder="Date" name="date">
+                <input id="time" type="time" placeholder="Time" name="time">
+            </div>
+            <textarea id="description" type="text" placeholder="Description" name="description"></textarea>
+            <div id="btns">
+                <button class="btn" type="button" onclick="checkScheduleContent()">Ok</button>
+                <button class="btn" type="button" onclick="locationPageSchedule()">Cancel</button>
+            </div>
+        </form>
     </div>
 </body>
 <script>

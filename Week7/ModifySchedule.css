@@ -25,6 +25,7 @@ hr{
 }
 
 #headerImg{
+    margin-left: 1vw;
     padding: 5px;
     width: 5vw;
     flex:1;
@@ -38,7 +39,7 @@ hr{
     flex:7;
 }
 
-#createScheduleForm{
+#modifyScheduleForm{
     margin: 3vw;
     padding: 30px;
     background-color: #96BAFF;
