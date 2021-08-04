@@ -1,6 +1,3 @@
-# StageUs_WebBasicStudy
-스테이지어스 3기 웹 기초 스터디
-=======
 # StageUs_3th_WebBasic_OutsourcingSimulation
 ### 스테이지어스 3기 웹기초 모의외주 프로젝트 
 <br>
