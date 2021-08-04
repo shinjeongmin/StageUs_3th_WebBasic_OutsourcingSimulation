@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.sql.ResultSet"%>
-<jsp:include page="./db_Scheduler.jsp" flush="false"/>
+<jsp:include page="./DB_jsp/db_Scheduler.jsp" flush="false"/>
 
 <%
     String year = request.getParameter("year");
@@ -14,7 +14,7 @@
         ? -1 : Integer.parseInt(request.getParameter("index"));
 %>
 
-<jsp:include page="db_DeleteSchedule.jsp" flush="false">
+<jsp:include page="./DB_jsp/db_DeleteSchedule.jsp" flush="false">
     <jsp:param name="deleteIdx" value="<%=deleteIdx%>"/>
     <jsp:param name="isPushDeleteBtn" value="<%=isPushDeleteBtn%>"/>
 </jsp:include>
@@ -29,7 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Scheduler.css">
+    <link rel="stylesheet" href="./css/Scheduler.css">
     <title>Scheduler</title>
 </head>
 <body>

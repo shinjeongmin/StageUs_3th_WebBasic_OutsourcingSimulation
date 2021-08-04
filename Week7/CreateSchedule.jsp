@@ -20,7 +20,7 @@
             <a id="headerText">Create Schedule</a>
         </div>
         <hr>
-        <form id="createScheduleForm" action="db_CreateSchedule.jsp" method="POST">
+        <form id="createScheduleForm" action="./DB_jsp/db_CreateSchedule.jsp" method="POST">
             <div id="dateAndTime">
                 <input id="date" type="date" placeholder="Date" name="date">
                 <input id="time" type="time" placeholder="Time" name="time">

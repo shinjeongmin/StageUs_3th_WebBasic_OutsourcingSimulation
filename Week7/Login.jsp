@@ -10,7 +10,7 @@
     }
 %>
 
-<jsp:include page="./db_Login.jsp" flush="false">
+<jsp:include page="./DB_jsp/db_Login.jsp" flush="false">
     <jsp:param name="id" value="<%=id%>"/>
     <jsp:param name="pw" value="<%=pw%>"/>
 </jsp:include>
@@ -21,7 +21,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Login.css">
+    <link rel="stylesheet" href="./css/Login.css">
     <title>Document</title>
 </head>
 <body>

@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./ModifySchedule.css">
+    <link rel="stylesheet" href="./css/ModifySchedule.css">
     <title>Document</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
             <a id="headerText">Modify Schedule</a>
         </div>
         <hr>
-        <form id="modifyScheduleForm" action="db_ModifySchedule.jsp" method="POST">
+        <form id="modifyScheduleForm" action="./DB_jsp/db_ModifySchedule.jsp" method="POST">
             <div id="dateAndTime">
                 <input id="index" type="number" name="index" value="<%=index%>"
                     style="display: none;">
