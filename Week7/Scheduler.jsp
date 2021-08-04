@@ -73,7 +73,7 @@
         if(scheduleDataArr.length == 0){
             return;
         }
-        for(var i = 0; i < Object.keys(scheduleDataArr[0]).length; i++){
+        for(var i = 0; i < scheduleDataArr.length; i++){
             var tempArr = scheduleDataArr[i];
             if("<%=year%>" === scheduleDataArr[i]["date"].split('-')[0] 
                 && <%=month%> === parseInt(scheduleDataArr[i]["date"].split('-')[1]))
