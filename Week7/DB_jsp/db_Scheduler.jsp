@@ -30,7 +30,7 @@
     }
     else{
         out.println("<script> alert(\"세션이 만료되었습니다 다시 로그인 해주세요\"); </script>");
-        out.println("<script> location.href = \"./Login.jsp\"; </script>");
+        out.println("<script> location.href = \"../Login.jsp\"; </script>");
     }
     
     int index = 0;

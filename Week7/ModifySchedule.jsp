@@ -36,7 +36,7 @@
             <textarea id="description" type="text" placeholder="Description" name="description"><%=description%></textarea>
             <div id="btns">
                 <button class="btn" type="button" onclick="checkScheduleContent()">Ok</button>
-                <button class="btn" type="button" onclick="locationPageSchedule()">Cancel</button>
+                <button class="btn" type="button" onclick="backToSchedule()">Cancel</button>
             </div>
         </form>
     </div>
@@ -72,6 +72,12 @@
     }
 
     function locationPageSchedule(){
+        var today = new Date();
+        location.href= "../Scheduler.jsp?year=" + today.getFullYear() 
+            + "&month=" + parseInt(today.getMonth() + 1) + "";
+    }
+
+    function backToSchedule(){
         var today = new Date();
         location.href= "./Scheduler.jsp?year=" + today.getFullYear() 
             + "&month=" + parseInt(today.getMonth() + 1) + "";

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CreateSchedule.css">
+    <link rel="stylesheet" href="./css/CreateSchedule.css">
     <title>Document</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
             <textarea id="description" type="text" placeholder="Description" name="description"></textarea>
             <div id="btns">
                 <button class="btn" type="button" onclick="checkScheduleContent()">Ok</button>
-                <button class="btn" type="button" onclick="locationPageSchedule()">Cancel</button>
+                <button class="btn" type="button" onclick="backToSchedule()">Cancel</button>
             </div>
         </form>
     </div>
@@ -64,6 +64,12 @@
     }
     
     function locationPageSchedule(){
+        var today = new Date();
+        location.href= "../Scheduler.jsp?year=" + today.getFullYear() 
+            + "&month=" + parseInt(today.getMonth() + 1) + "";
+    }
+
+    function backToSchedule(){
         var today = new Date();
         location.href= "./Scheduler.jsp?year=" + today.getFullYear() 
             + "&month=" + parseInt(today.getMonth() + 1) + "";

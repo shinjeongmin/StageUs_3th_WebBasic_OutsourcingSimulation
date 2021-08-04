@@ -47,17 +47,17 @@ body{
 }
 
 .arrowBtnLeft{
-    background-image: url("./img/schedule/navigationArrowMonthBtn_Left.png");
+    background-image: url("../img/schedule/navigationArrowMonthBtn_Left.png");
 }
 .arrowBtnLeft:active{
-    background-image: url("./img/schedule/navigationArrowMonthBtn_Left_Pressed.png");
+    background-image: url("../img/schedule/navigationArrowMonthBtn_Left_Pressed.png");
 }
 
 .arrowBtnRight{
-    background-image: url("./img/schedule/navigationArrowMonthBtn_Right.png");
+    background-image: url("../img/schedule/navigationArrowMonthBtn_Right.png");
 }
 .arrowBtnRight:active{
-    background-image: url("./img/schedule/navigationArrowMonthBtn_Right_Pressed.png");
+    background-image: url("../img/schedule/navigationArrowMonthBtn_Right_Pressed.png");
 }
 
 .navigationArrowMonthBtnImg{
@@ -153,7 +153,7 @@ body{
 }
 .scheduleContent{
     min-height: 100px;
-    background-image: url(img/schedule/X_7C83FD.png);
+    background-image: url(../img/schedule/X_7C83FD.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
@@ -185,22 +185,22 @@ body{
     align-items: center;
 }
 .modifyBtn{
-    background-image: url(./img/schedule/editScheduleBtn.png);
+    background-image: url(../img/schedule/editScheduleBtn.png);
 }
 .modifyBtn:hover{
-    background-image: url(./img/schedule/editScheduleBtn_Hover.png);
+    background-image: url(../img/schedule/editScheduleBtn_Hover.png);
 }
 .modifyBtn:active{
-    background-image: url(./img/schedule/editScheduleBtn_Pressed.png);
+    background-image: url(../img/schedule/editScheduleBtn_Pressed.png);
 }
 .deleteBtn{
-    background-image: url(./img/schedule/deleteScheduleBtn.png);
+    background-image: url(../img/schedule/deleteScheduleBtn.png);
 }
 .deleteBtn:hover{
-    background-image: url(./img/schedule/deleteScheduleBtn_Hover.png);
+    background-image: url(../img/schedule/deleteScheduleBtn_Hover.png);
 }
 .deleteBtn:active{
-    background-image: url(./img/schedule/deleteScheduleBtn_Pressed.png);
+    background-image: url(../img/schedule/deleteScheduleBtn_Pressed.png);
 }
 .scheduleBtn{
     min-height: 100px;
@@ -305,7 +305,7 @@ body{
     }
     .scheduleContent{
         min-height: 70px;
-        background-image: url(img/schedule/X_7C83FD.png);
+        background-image: url(../img/schedule/X_7C83FD.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }

@@ -75,6 +75,7 @@
         }
         for(var i = 0; i < scheduleDataArr.length; i++){
             var tempArr = scheduleDataArr[i];
+            console.log(scheduleDataArr[i]["date"]);
             if("<%=year%>" === scheduleDataArr[i]["date"].split('-')[0] 
                 && <%=month%> === parseInt(scheduleDataArr[i]["date"].split('-')[1]))
             {
