@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # StageUs_WebBasicStudy
 스테이지어스 3기 웹 기초 스터디
 =======
@@ -42,5 +41,3 @@ JSP 페이지를 DB data를 가져오는 부분만을 독립적으로 모듈화�
 
 #### Modify Schedule Page
 ![image](https://user-images.githubusercontent.com/52451400/128208141-cb681b7c-8f6b-4808-868b-ec74159ee985.png)
-
->>>>>>> origin/main
