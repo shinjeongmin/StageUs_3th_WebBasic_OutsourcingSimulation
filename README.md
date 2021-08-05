@@ -1,5 +1,5 @@
-# StageUs_3th_WebBasic_OutsourcingSimulation
-### 스테이지어스 3기 웹기초 모의외주 프로젝트 
+# WebBasic_OutsourcingSimulation
+### 웹기초 모의외주 프로젝트 
 <br>
 
 ## Project Name
